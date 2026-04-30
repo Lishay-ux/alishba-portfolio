@@ -26,7 +26,6 @@ body {
     position: relative;
 }
 
-/* WAVE BACKGROUND ANIMATION */
 body::before {
     content: '';
     position: fixed;
@@ -47,7 +46,6 @@ body::before {
     100% { background-position: 1440px 0; }
 }
 
-/* PROGRESS BAR */
 #progress {
     position: fixed;
     top: 0;
@@ -58,7 +56,6 @@ body::before {
     z-index: 9999;
 }
 
-/* FLOATING PARTICLES */
 .particle {
     position: fixed;
     bottom: -10px;
@@ -77,7 +74,6 @@ body::before {
     100% { transform: translateY(-110vh) scale(0.4); opacity: 0; }
 }
 
-/* MOUSE BUBBLE - LIGHT & BEAUTIFUL */
 .mouse-bubble {
     position: fixed;
     width: 10px;
@@ -95,7 +91,6 @@ body::before {
     100% { opacity: 0; transform: translate(-50%, -50%) scale(2); }
 }
 
-/* NAVBAR - ATTRACTIVE BUTTONS */
 nav {
     position: fixed;
     top: 0;
@@ -159,7 +154,6 @@ body {
     padding-top: 80px;
 }
 
-/* HERO SECTION */
 .hero {
     min-height: 80vh;
     display: flex;
@@ -256,7 +250,6 @@ body {
     animation: none;
 }
 
-/* SECTION CARDS */
 .section-card {
     max-width: 1100px;
     margin: 50px auto;
@@ -282,7 +275,6 @@ body {
     padding-left: 18px;
 }
 
-/* WEEKLY REFLECTIONS - PROFESSIONAL & NATURAL STYLE */
 .weekly-container {
     display: flex;
     flex-direction: column;
@@ -349,7 +341,6 @@ body {
     color: #6a0dad;
 }
 
-/* SKILL BADGES */
 .skill-badge {
     background: #ede4ff;
     padding: 6px 16px;
@@ -367,7 +358,6 @@ body {
     transform: translateY(-2px);
 }
 
-/* CERTIFICATE ITEMS */
 .cert-item {
     background: #f9f5ff;
     padding: 16px;
@@ -383,7 +373,6 @@ body {
     transform: translateX(5px);
 }
 
-/* SOCIAL LINKS */
 .social-links {
     display: flex;
     gap: 20px;
@@ -418,6 +407,16 @@ footer {
     font-size: 0.9rem;
 }
 
+/* Clean list style */
+.clean-list {
+    margin: 10px 0 10px 25px;
+    padding-left: 0;
+}
+.clean-list li {
+    margin-bottom: 6px;
+    line-height: 1.5;
+}
+
 @media(max-width: 800px) {
     .section-card { padding: 30px 20px; margin: 30px 20px; }
     .hero-text h1 { font-size: 36px; text-align: center; }
@@ -440,6 +439,9 @@ footer {
     .week-content {
         padding: 16px 20px;
     }
+    .clean-list {
+        margin-left: 20px;
+    }
 }
 </style>
 </head>
@@ -447,12 +449,12 @@ footer {
 
 <div id="progress"></div>
 
-<!-- NAVBAR - ATTRACTIVE BUTTONS -->
 <nav>
     <div class="nav-row">
         <a onclick="scrollToHome()">🏠 Home</a>
         <a onclick="scrollToSection('intro')">📌 Intro</a>
         <a onclick="scrollToSection('weekly')">📖 Weekly</a>
+        <a onclick="scrollToSection('ethics')">⚖️ Ethics</a>
         <a onclick="scrollToSection('industry')">💼 Industry</a>
         <a onclick="scrollToSection('skills')">📊 Skills</a>
         <a onclick="scrollToSection('project')">🛡️ Project</a>
@@ -462,7 +464,6 @@ footer {
     </div>
 </nav>
 
-<!-- HERO SECTION -->
 <div class="hero" id="home">
     <img src="profile.jpg" alt="Alishba Arshad">
     <div class="hero-text">
@@ -488,96 +489,27 @@ footer {
     </div>
 </section>
 
-<!-- WEEKLY REFLECTIONS -->
+<!-- WEEKLY REFLECTIONS (5-7 lines each) -->
 <section id="weekly" class="section-card" data-aos="fade-up">
     <h2>📖 Weekly Reflections</h2>
     <div class="weekly-container">
-        
-        <div class="weekly-item">
-            <div class="weekly-header">
-                <div class="week-number">Week 01</div>
-                <div class="week-title">Role of CS Graduate</div>
-            </div>
-            <div class="week-content">
-                <p><span class="highlight">What I Learned:</span> A Computer Science graduate is much more than just a programmer. We are problem solvers, ethical thinkers, and lifelong learners. Technical skills matter, but so do communication, integrity, and teamwork.</p>
-                <p><span class="highlight">Key Insight:</span> Regular self assessment helps us recognize our strengths and the areas where we need to grow.</p>
-                <p><span class="highlight">Real life Application:</span> This encouraged me to honestly evaluate my own skills and create a realistic personal development plan.</p>
-            </div>
-        </div>
-
-        <div class="weekly-item">
-            <div class="weekly-header">
-                <div class="week-number">Week 02</div>
-                <div class="week-title">CS in Society</div>
-            </div>
-            <div class="week-content">
-                <p><span class="highlight">What I Learned:</span> Computing has completely reshaped how we learn, work, and communicate. But with this power comes responsibility. Issues like the digital divide and data privacy are real and urgent.</p>
-                <p><span class="highlight">Key Insight:</span> Every technological solution we build has social consequences, whether good or bad.</p>
-                <p><span class="highlight">Real life Application:</span> I now try to think about the broader impact of my projects before jumping into code.</p>
-            </div>
-        </div>
-
-        <div class="weekly-item">
-            <div class="weekly-header">
-                <div class="week-number">Week 03</div>
-                <div class="week-title">Workplace Culture</div>
-            </div>
-            <div class="week-content">
-                <p><span class="highlight">What I Learned:</span> A healthy workplace is not just about following rules. It is built on respect, diversity, and inclusion. When people feel safe and valued, teams perform much better.</p>
-                <p><span class="highlight">Key Insight:</span> Professional conduct means treating everyone fairly, not just checking off a list.</p>
-                <p><span class="highlight">Real life Application:</span> I keep these principles in mind during group projects and university events.</p>
-            </div>
-        </div>
-
-        <div class="weekly-item">
-            <div class="weekly-header">
-                <div class="week-number">Week 04</div>
-                <div class="week-title">Personal Branding</div>
-            </div>
-            <div class="week-content">
-                <p><span class="highlight">What I Learned:</span> Your online presence, including LinkedIn, GitHub, and even how you write emails, is often someone's first impression of you. A degree alone is not enough anymore.</p>
-                <p><span class="highlight">Key Insight:</span> Building a personal brand means consistently showing your skills, values, and professionalism.</p>
-                <p><span class="highlight">Real life Application:</span> I have started updating my LinkedIn and GitHub with my projects and certifications.</p>
-            </div>
-        </div>
-
-        <div class="weekly-item">
-            <div class="weekly-header">
-                <div class="week-number">Week 05</div>
-                <div class="week-title">Codes of Conduct</div>
-            </div>
-            <div class="week-content">
-                <p><span class="highlight">What I Learned:</span> Professional organizations like ACM, IEEE, and BCS have clear codes of conduct. They remind us that honesty, public safety, and user privacy are not optional. These are the foundation of trust in technology.</p>
-                <p><span class="highlight">Key Insight:</span> Ethics is not a side note in computing. It is a core responsibility that every professional must take seriously.</p>
-                <p><span class="highlight">Real life Application:</span> Whenever I face an ethical dilemma in a project, I now ask myself what these codes would guide me to do.</p>
-            </div>
-        </div>
-
-        <div class="weekly-item">
-            <div class="weekly-header">
-                <div class="week-number">Week 06</div>
-                <div class="week-title">Lifelong Learning</div>
-            </div>
-            <div class="week-content">
-                <p><span class="highlight">What I Learned:</span> Technology changes faster than any degree can keep up with. What we learn today might evolve tomorrow, so staying curious and continuously updating our skills is essential.</p>
-                <p><span class="highlight">Key Insight:</span> Graduation is not the end of learning. It is where professional growth really begins.</p>
-                <p><span class="highlight">Real life Application:</span> I am actively working on security certifications and trying to stay updated with industry trends.</p>
-            </div>
-        </div>
-
-        <div class="weekly-item">
-            <div class="weekly-header">
-                <div class="week-number">Week 07</div>
-                <div class="week-title">Ethics in Computing</div>
-            </div>
-            <div class="week-content">
-                <p><span class="highlight">What I Learned:</span> From AI bias to data leaks and responsible disclosure, ethics in computing is not abstract. The systems we build affect real people, and we are accountable for their safety and fairness.</p>
-                <p><span class="highlight">Key Insight:</span> Even small technical choices can have serious ethical consequences.</p>
-                <p><span class="highlight">Real life Application:</span> I now try to apply privacy by design in every project, thinking about user safety from the very first step.</p>
-            </div>
-        </div>
-
+        <div class="weekly-item"><div class="weekly-header"><div class="week-number">Lecture 1</div><div class="week-title">Orientation</div></div><div class="week-content"><p><span class="highlight">What I Learned:</span> A CS graduate is more than a coder – we are problem solvers, ethical thinkers, and lifelong learners. Technical skills matter, but so do communication and teamwork.</p><p><span class="highlight">Key Insight:</span> Regular self-assessment helps recognize strengths and areas to grow. A successful professional needs both hard and soft skills.</p><p><span class="highlight">Real-life Application:</span> I now evaluate my skills honestly and focus on improving weak areas. In projects, I prioritize user data protection and meeting deadlines.</p></div></div>
+        <div class="weekly-item"><div class="weekly-header"><div class="week-number">Lecture 2</div><div class="week-title">CS in Society</div></div><div class="week-content"><p><span class="highlight">What I Learned:</span> Computing has reshaped society – from the internet to AI. But with power comes responsibility: privacy, digital divide, and cyber threats are real.</p><p><span class="highlight">Key Insight:</span> Every system we build affects people’s lives, jobs, and privacy. Ethics is not optional; it’s essential. ACM/IEEE codes guide us.</p><p><span class="highlight">Real-life Application:</span> I now consider the social impact of my projects, ensure data privacy, and avoid biased algorithms before writing code.</p></div></div>
+        <div class="weekly-item"><div class="weekly-header"><div class="week-number">Lecture 3</div><div class="week-title">Workplace Culture</div></div><div class="week-content"><p><span class="highlight">What I Learned:</span> Workplace culture is built on respect, diversity, and inclusion. When people feel valued, teams perform better and innovate more.</p><p><span class="highlight">Key Insight:</span> Inclusion means every voice matters – not just diverse faces. Professional conduct includes honesty, integrity, and protecting user data.</p><p><span class="highlight">Real-life Application:</span> In group projects, I communicate respectfully, avoid bias, and support all members equally. I report bugs honestly and never hide errors.</p></div></div>
+        <div class="weekly-item"><div class="weekly-header"><div class="week-number">Lecture 4</div><div class="week-title">Personal Branding</div></div><div class="week-content"><p><span class="highlight">What I Learned:</span> Your LinkedIn, GitHub, and emails create your first impression. Employers review online profiles before hiring – a degree alone is not enough.</p><p><span class="highlight">Key Insight:</span> Personal branding is consistently showing your skills, values, and professionalism. It opens doors to internships and jobs.</p><p><span class="highlight">Real-life Application:</span> I updated my GitHub with projects (Face Recognition, Hospital Management) and improved my LinkedIn profile to attract recruiters.</p></div></div>
+        <div class="weekly-item"><div class="weekly-header"><div class="week-number">Lecture 5</div><div class="week-title">CODES OF CONDUCT</div></div><div class="week-content"><p><span class="highlight">What I Learned:</span> ACM, IEEE, and BCS codes guide ethical behavior – integrity, public safety, fairness, and privacy protection. They are the foundation of trust.</p><p><span class="highlight">Key Insight:</span> Ethics is not a side note; it’s a core responsibility. Ignoring it for deadlines can harm users and society.</p><p><span class="highlight">Real-life Application:</span> When handling user data, I get consent and secure it. I honestly disclose system limitations and never hide bugs.</p></div></div>
+        <div class="weekly-item"><div class="weekly-header"><div class="week-number">Lecture 6</div><div class="week-title">Life-long Learning</div></div><div class="week-content"><p><span class="highlight">What I Learned:</span> Technology changes fast. A degree is just the start. We need a skills roadmap from core subjects to advanced fields like AI, cloud, and cybersecurity.</p><p><span class="highlight">Key Insight:</span> Students who keep learning have better career growth. Certifications help, but practical projects matter most.</p><p><span class="highlight">Real-life Application:</span> I created a learning plan focusing on ethical hacking, network security, and cryptography. I upload projects to GitHub to track progress.</p></div></div>
+        <div class="weekly-item"><div class="weekly-header"><div class="week-number">Lecture 7</div><div class="week-title">ETHICS IN COMPUTING</div></div><div class="week-content"><p><span class="highlight">What I Learned:</span> From AI bias to data leaks, ethics is not abstract. Small technical choices can have serious consequences for real people.</p><p><span class="highlight">Key Insight:</span> We are accountable for safety and fairness. Privacy by design should be applied from the first step of any project.</p><p><span class="highlight">Real-life Application:</span> I now apply privacy by design in every project, think about user safety first, and advocate for explainable AI.</p></div></div>
     </div>
+</section>
+
+<!-- ETHICS REFLECTION -->
+<section id="ethics" class="section-card" data-aos="fade-up">
+    <h2>⚖️ Ethics Reflection</h2>
+    <p><b>Ethical Issue:</b> AI Bias and Algorithmic Discrimination – AI systems often produce unfair outcomes because they are trained on biased historical data. For example, hiring algorithms may favor certain genders or races, and facial recognition works poorly on darker skin tones.</p>
+    <p><b>What is the problem?</b> Without careful testing, AI can amplify societal biases. People may lose job opportunities or be denied services due to an algorithm’s flaw. This violates fairness and justice.</p>
+    <p><b>Which professional code (IEEE/ACM) applies?</b> ACM Code (1.2 Avoid Harm, 1.6 Be Fair) and IEEE Code (public safety, reject discrimination) directly apply. They require inclusive design and human well‑being.</p>
+    <p><b>My decision and justification:</b> I will audit datasets for bias, use fairness metrics, and build explainable AI models. This aligns with ACM/IEEE because it protects people from harm and ensures equal treatment.</p>
 </section>
 
 <!-- INDUSTRY INTERACTION -->
@@ -589,45 +521,63 @@ footer {
     <p><b>Skills Required in Real-World Jobs:</b> Ethical judgment, digital literacy, lifelong learning, teamwork, and clear communication.</p>
 </section>
 
-<!-- SKILLS & CAREER - NO FUTURE PLANS, NO CERTIFICATIONS -->
+<!-- SKILLS & CAREER DEVELOPMENT (clean, no plus signs, no emojis, only standard bullets) -->
 <section id="skills" class="section-card" data-aos="fade-up">
     <h2>📊 Skills & Career Development</h2>
     
-    <p><b>Technical Foundation</b><br>
-    Over the course of my degree, I have built a solid base in <b>C/C++, Java, and Python</b>. I am comfortable working with <b>Data Structures, Oracle Database, and AI/ML basics</b>. My coursework has also covered <b>Automata Theory, Digital Logic Design (DLD), and Operating Systems</b> which helped me understand how computers work at a deeper level.</p>
+    <p><b>Skills I currently have</b></p>
+    <p><b>Technical:</b> C/C++, Java, Python, Data Structures, Oracle DB, AI/ML basics, Automata, OS, DLD.</p>
+    <p><b>Soft:</b> Leadership (Class Representative & Sports Captain), teamwork, communication, MS Office, event management.</p>
     
-    <p><b>Beyond Academics</b><br>
-    I have actively taken on leadership roles as <b>Class Representative and Sports Captain</b>, which strengthened my <b>teamwork, event management, and communication skills</b>. I am also proficient in <b>MS Office</b> and comfortable presenting ideas clearly.</p>
-    
-    <div>
+    <div style="margin: 15px 0;">
         <span class="skill-badge">Python</span>
         <span class="skill-badge">Java</span>
         <span class="skill-badge">C/C++</span>
         <span class="skill-badge">Data Structures</span>
         <span class="skill-badge">Oracle SQL</span>
         <span class="skill-badge">AI/ML Basics</span>
-        <span class="skill-badge">Automata</span>
-        <span class="skill-badge">OS & DLD</span>
         <span class="skill-badge">Leadership</span>
         <span class="skill-badge">Communication</span>
     </div>
-    
-    <p style="margin-top: 20px;"><b>What I'm Working On Next</b><br>
-    I am currently focusing on <b>Ethical Hacking, Network Security, Cryptography, and Digital Forensics</b>. I believe these are essential for a strong career in cybersecurity.</p>
+
+    <p><b>Skills I need to develop</b></p>
+    <ul class="clean-list">
+        <li>Advanced Network Security (Firewalls, IDS/IPS)</li>
+        <li>Cloud Security (AWS, Azure)</li>
+        <li>Penetration Testing (Metasploit, Burp Suite)</li>
+        <li>SIEM Tools (Splunk), Digital Forensics, OWASP Top 10</li>
+    </ul>
+
+    <p><b>Certifications I plan to do</b></p>
+    <ul class="clean-list">
+        <li>CompTIA </li>
+        <li>Certified Ethical Hacker </li>
+        <li>Cisco CCNA Security</li>
+        <li>Offensive Security Certified Professional (OSCP) </li>
+        <li>AWS Certified Security </li>
+    </ul>
+
+    <p><b>Career goal</b></p>
+    <ul class="clean-list">
+        <li><b>Short-term (1-2 years):</b> Security Analyst internship, earn Security and CEH certifications, contribute to open-source security tools, and gain hands-on experience in vulnerability assessment.</li>
+        <li><b>Long-term (3-5 years):</b> Become a Cybersecurity Consultant or Penetration Tester, lead security audits, help organizations secure their infrastructure, and mentor junior students in cybersecurity awareness.</li>
+    </ul>
+
+    <p><b>What I'm focusing on right now:</b> Ethical Hacking, Network Security, Cryptography, Digital Forensics.</p>
 </section>
 
 <!-- PROJECT REFLECTION -->
 <section id="project" class="section-card" data-aos="fade-up">
     <h2>🛡️ Project Reflection: Cybersecurity Awareness Among Students</h2>
     <p><b>Project Title:</b> Cybersecurity Awareness Among Students – Survey & Analysis</p>
-    <p><b>My Role:</b> Research lead, survey design, data analysis, and report compilation. Also coordinated team tasks and presentation.</p>
-    <p><b>Challenges:</b> Low response rate, time management, and ensuring unbiased data collection.</p>
-    <p><b>Solutions:</b> Used anonymous Google Forms, divided tasks using weekly syncs, and promoted survey via class representatives.</p>
+    <p><b>My Role:</b> Research lead, survey design, data analysis, report compilation. Also coordinated team tasks and presentation.</p>
+    <p><b>Challenges:</b> Low response rate, time management, unbiased data collection.</p>
+    <p><b>Solutions:</b> Anonymous Google Forms, weekly syncs, promotion via class representatives.</p>
     <p><b>Teamwork Lessons:</b> Collaboration improves output; respecting diverse opinions leads to robust solutions.</p>
     <p><b>GitHub Repositories:</b> Face Recognition ESP32, Hospital Management System (Java), Sustainability Magazine, Tic-Tac-Toe, Phone Directory (Data Structures).</p>
 </section>
 
-<!-- CERTIFICATES -->
+<!-- CERTIFICATES & ACHIEVEMENTS (including CM Laptop Scheme) -->
 <section id="certificates" class="section-card" data-aos="fade-up">
     <h2>🏅 Certifications & Professional Development</h2>
     <div class="cert-item"><b>📘 The World of Classroom Assessment and Testing</b> – Coursera / HEC (June 11, 2025)</div>
@@ -635,13 +585,14 @@ footer {
     <div class="cert-item"><b>🎙️ Beneficial Use of Social Media in Education & Training</b> – FJWU CBS (Sep 03, 2025)</div>
     <div class="cert-item"><b>🌍 Youth Voices for Kashmir</b> – YFK (Sep 21, 2025)</div>
     <div class="cert-item"><b>💡 Creative Leadership Conference</b> – Character Building Society (Nov 7, 2025)</div>
+    <div class="cert-item"><b>💻 CM Laptop Scheme 2025</b> – Government of Punjab initiative supporting digital learning and student empowerment.</div>
     <p style="margin-top: 15px;"><b>Achievements:</b> Chief Minister's Honhaar Scholarship, Class Representative (CR), Sports Captain.</p>
 </section>
 
 <!-- FINAL REFLECTION -->
 <section id="final" class="section-card" data-aos="fade-up">
     <h2>✨ Final Reflection</h2>
-    <p>This Capstone & Professional Practices course transformed my perspective: computer science is not only about coding but also about <b>ethics, responsibility, teamwork, and lifelong learning</b>. The most important lesson: every technical decision has societal consequences.</p>
+    <p>This Capstone & Professional Practices course transformed my perspective: computer science is not only about coding but also about ethics, responsibility, teamwork, and lifelong learning. The most important lesson: every technical decision has societal consequences.</p>
     <p>I will apply this by upholding ethical standards in all projects, continuously upgrading my cybersecurity skills, and contributing to secure, inclusive technology.</p>
 </section>
 
@@ -653,14 +604,13 @@ footer {
 </section>
 
 <footer>
-    © 2026 Alishba Arshad – Capstone & Professional Practices Portfolio
+    © 2026 Alishba Arshad – Portfolio
 </footer>
 
 <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
 <script>
     AOS.init({ duration: 800, once: false, mirror: true });
 
-    // Typing effect for name
     const nameStr = "Alishba Arshad";
     let idxName = 0;
     function typeName() {
@@ -672,11 +622,8 @@ footer {
     }
     typeName();
 
-    // Dynamic typewriter text
     const texts = ["🔐 Cybersecurity Enthusiast", "💻 Problem Solver", "📚 Lifelong Learner", "🛡️ Ethical Hacker"];
-    let textIndex = 0;
-    let charIndex = 0;
-    let isDeleting = false;
+    let textIndex = 0, charIndex = 0, isDeleting = false;
     const dynamicElement = document.getElementById("dynamicText");
 
     function typeEffect() {
@@ -688,25 +635,21 @@ footer {
             dynamicElement.innerHTML = currentText.substring(0, charIndex + 1);
             charIndex++;
         }
-        
         if (!isDeleting && charIndex === currentText.length) {
             isDeleting = true;
             setTimeout(typeEffect, 2000);
             return;
         }
-        
         if (isDeleting && charIndex === 0) {
             isDeleting = false;
             textIndex = (textIndex + 1) % texts.length;
             setTimeout(typeEffect, 500);
             return;
         }
-        
         setTimeout(typeEffect, isDeleting ? 80 : 120);
     }
     setTimeout(typeEffect, 500);
 
-    // Scroll progress
     window.addEventListener("scroll", () => {
         const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
         const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
@@ -714,7 +657,6 @@ footer {
         document.getElementById("progress").style.width = scrolled + "%";
     });
 
-    // Floating particles
     for (let i = 0; i < 40; i++) {
         let p = document.createElement("div");
         p.className = "particle";
@@ -727,7 +669,6 @@ footer {
         document.body.appendChild(p);
     }
 
-    // Mouse bubbles
     let lastBubbleTime = 0;
     document.addEventListener("mousemove", (e) => {
         const now = Date.now();
@@ -742,7 +683,6 @@ footer {
         }
     });
 
-    // Scroll functions
     function scrollToSection(sectionId) {
         const element = document.getElementById(sectionId);
         if (element) {
